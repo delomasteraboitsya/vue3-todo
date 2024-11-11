@@ -1,7 +1,8 @@
 // LINK: https://eslint.vuejs.org/
 import pluginVue from 'eslint-plugin-vue'
-import pluginTypescript from '@typescript-eslint/eslint-plugin';
-import parserTypescript from '@typescript-eslint/parser';
+import pluginTypescript from '@typescript-eslint/eslint-plugin'
+import parserTypescript from '@typescript-eslint/parser'
+import prettierConfig from 'eslint-config-prettier'
 
 export default [
   ...pluginVue.configs['flat/recommended'],
@@ -17,10 +18,24 @@ export default [
       },
     },
     plugins: {
-      /**
-       * @description Additional rules for TypeScript
-      */
       '@typescript-eslint': pluginTypescript,
     },
+    rules: {
+      /**
+       * @description Additional rules for TypeScript
+       */
+      '@typescript-eslint/no-unused-vars': 'error',
+    },
   },
-];
+
+  prettierConfig,
+
+  {
+    plugins: {
+      prettier: eslintPluginPrettier,
+    },
+    rules: {
+      'prettier/prettier': 'error',
+    },
+  },
+]
