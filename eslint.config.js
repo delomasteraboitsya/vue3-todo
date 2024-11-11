@@ -3,6 +3,7 @@ import pluginVue from 'eslint-plugin-vue'
 import pluginTypescript from '@typescript-eslint/eslint-plugin'
 import parserTypescript from '@typescript-eslint/parser'
 import prettierConfig from 'eslint-config-prettier'
+import eslintPluginPrettier from 'eslint-plugin-prettier'
 
 export default [
   ...pluginVue.configs['flat/recommended'],
